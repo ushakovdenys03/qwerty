@@ -1,0 +1,285 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal {
+  background: #150019;
+  padding: 25px;
+  width: 420px;
+  border-radius: 12px;
+  color: white;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.select {
+  cursor: pointer;
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px;
+  background: #1a001f;
+  border: 1px solid #444;
+  color: white;
+  font-family: inherit;
+}
+
+.select option {
+  cursor: pointer;
+  background: #1a001f;
+  color: white;
+}
+
+.desc {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 16px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #22002b;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.form label {
+  font-size: 14px;
+  display: block;
+  margin-top: 10px;
+}
+
+.form input,
+.form textarea {
+  width: 96%;
+  margin-top: 4px;
+  padding: 8px;
+  background: #1a001f;
+  border: 1px solid #444;
+  color: white;
+}
+
+textarea {
+  height: 100px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.cancel {
+  background: transparent;
+  border: 1px solid white;
+  padding: 8px 16px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cancel:hover {
+  transform: scale(0.9);
+}
+
+.send {
+  background: #ff4d7a;
+  border: 1px solid white;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+
+.send:hover {
+  transform: scale(0.9);
+}
+
+.error {
+  color: #ff4d7a;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* всё супер */
+
+.successOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.successModal {
+  background: #1a0025;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #fff;
+}
+
+.successModal h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.successModal p {
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+.closeSuccess {
+  padding: 10px 25px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.closeSuccess:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* окно модалки */
+.modalContent {
+  width: min(720px, calc(100% - 40px));
+  background: rgba(20, 3, 21, 0.98);
+  border-radius: 6px;
+  padding: 28px 26px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  outline: none;
+}
+
+.successTitle {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.successSubtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.successClose {
+  padding: 10px 28px;
+  margin-top: 12px;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Modal-form-telephone */
+
+@media (max-width: 670px) {
+  .overlay {
+    justify-content: flex-start;
+  }
+
+  .modal {
+    padding: 18px;
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 550px) {
+  .overlay {
+    justify-content: flex-start;
+  }
+
+  .modal {
+    padding: 18px;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 450px) {
+  .overlay {
+    justify-content: flex-start;
+  }
+
+  .modal {
+    padding: 18px;
+    max-width: 400px;
+  }
+}
+
+/* vse good */
+
+@media (max-width: 850px) {
+  .successOverlay {
+    justify-content: flex-start;
+  }
+
+  .modalContent {
+    padding: 18px;
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 750px) {
+  .successOverlay {
+    justify-content: flex-start;
+  }
+
+  .modalContent {
+    padding: 18px;
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 650px) {
+  .successOverlay {
+    justify-content: flex-start;
+  }
+
+  .modalContent {
+    padding: 18px;
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 550px) {
+  .successOverlay {
+    justify-content: flex-start;
+  }
+
+  .modalContent {
+    padding: 18px;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 450px) {
+  .successOverlay {
+    justify-content: flex-start;
+  }
+
+  .modalContent {
+    padding: 18px;
+    max-width: 350px;
+  }
+}

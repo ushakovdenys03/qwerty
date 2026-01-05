@@ -1,0 +1,67 @@
+@font-face {
+  font-display: swap;
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/space-mono-v17-latin-700.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/plus-jakarta-sans-v12-latin-regular.woff2") format("woff2");
+}
+
+#root {
+  --color-pink: #fedddf;
+  --color-red: #f7717d;
+  --color-rose: #de639a;
+  --color-purple: #7f2982;
+  --color-dark: #16001e;
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+li,
+a {
+  list-style-type: none;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 400;
+  margin: 0;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+p,
+button {
+  font-family: "Plus Jakarta Sans";
+  font-weight: 400;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Space Mono";
+  font-weight: 700;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+}

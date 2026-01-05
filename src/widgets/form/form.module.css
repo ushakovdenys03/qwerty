@@ -1,0 +1,315 @@
+:root {
+  --bg: #140315;
+  --panel: #1a0816;
+  --white: #ffffff;
+  --muted: #d6cbd8;
+  --accent: #ff7f8b;
+  --input-bg: #ffffff;
+  --input-text: #111;
+}
+
+/* ===================== */
+/* ОБЁРТКА (ЦЕНТРИРОВАНИЕ ФОРМЫ) */
+/* ===================== */
+
+.wrapper {
+  /* background-color: var(--color-pink); */
+  min-height: 100vh;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+/* ===================== */
+/* ФОРМА */
+/* ===================== */
+
+.form {
+  width: 100%;
+  max-width: 720px;
+
+  padding: 22px;
+  background: var(--bg);
+  color: var(--white);
+
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.45);
+  border-radius: 6px;
+
+  font-family: "Plus Jakarta Sans";
+}
+
+/* ===================== */
+/* ТЕКСТ */
+/* ===================== */
+
+.title {
+  margin: 0 0 6px 0;
+  font-size: 24px;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0 0 16px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.description {
+  margin-top: 10px;
+}
+
+.serviceDescription {
+  padding: 16px 0;
+  line-height: 1.4;
+}
+
+/* ===================== */
+/* INPUTS */
+/* ===================== */
+
+.selectWrap {
+  position: relative;
+  margin-top: 6px;
+}
+
+.select,
+.input,
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: none;
+  border-radius: 2px;
+  background: var(--input-bg);
+  color: var(--input-text);
+
+  font-size: 14px;
+  outline: none;
+}
+
+.select {
+  padding: 10px 36px 10px 12px;
+}
+
+.input {
+  padding: 10px 12px;
+  margin-top: 6px;
+}
+
+.textarea {
+  margin-top: 6px;
+  padding: 12px;
+  resize: vertical;
+  min-height: 160px;
+}
+
+/* ===================== */
+/* ОШИБКИ */
+/* ===================== */
+
+.error {
+  color: #ffb3b9;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+/* ===================== */
+/* КНОПКА */
+/* ===================== */
+
+.buttonsRow {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sendBtn {
+  padding: 10px 26px;
+  background: var(--accent);
+  color: var(--white);
+
+  border: solid 2px var(--white);
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: transform 0.25s ease;
+}
+
+.sendBtn:hover {
+  transform: scale(0.95);
+}
+
+.sendBtn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* ===================== */
+/* MODAL (ОКНО УСПЕХА) */
+/* ===================== */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(4, 2, 6, 0.65);
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+.modalContent {
+  width: 100%;
+  max-width: min(600px, 100%);
+  box-sizing: border-box;
+
+  background: rgba(20, 3, 21, 0.98);
+  color: var(--white);
+
+  padding: 24px;
+  border-radius: 6px;
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  overflow-x: hidden;
+}
+
+.successTitle {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.successSubtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.successClose {
+  padding: 10px 28px;
+  margin-top: 14px;
+
+  background: transparent;
+  color: var(--white);
+
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ===================== */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ */
+/* ===================== */
+
+@media (max-width: 850px) {
+  .form {
+    padding: 18px;
+  }
+
+  .modalOverlay {
+    justify-content: flex-start;
+  }
+
+  .modalContent {
+    padding: 18px;
+    max-width: 750px;
+  }
+
+  .sendBtn {
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 750px) {
+  .form {
+    padding: 18px;
+  }
+
+  .modalOverlay {
+    justify-content: flex-start;
+  }
+
+  .modalContent {
+    padding: 18px;
+    max-width: 650px;
+  }
+
+  .sendBtn {
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .form {
+    padding: 18px;
+  }
+
+  .modalOverlay {
+    justify-content: flex-start;
+  }
+
+  .modalContent {
+    padding: 18px;
+    max-width: 550px;
+  }
+
+  .sendBtn {
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .form {
+    padding: 18px;
+  }
+
+  .modalOverlay {
+    justify-content: flex-start;
+  }
+
+  .modalContent {
+    padding: 18px;
+    max-width: 450px;
+  }
+
+  .sendBtn {
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .form {
+    padding: 18px;
+  }
+
+  .modalOverlay {
+    justify-content: flex-start;
+  }
+
+  .modalContent {
+    padding: 18px;
+    max-width: 400px;
+  }
+
+  .sendBtn {
+    padding: 8px 20px;
+  }
+}

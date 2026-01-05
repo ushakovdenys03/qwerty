@@ -1,0 +1,123 @@
+.field {
+  display: flex;
+  gap: 150px;
+  align-items: center;
+  color: var(--color-white);
+  background: var(--color-black);
+  max-height: 450px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0 50px 150px;
+  gap: 50px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+}
+
+.button {
+  width: 300px;
+  height: 80px;
+  padding: 20px 30px;
+  color: var(--color-white);
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: scale(0.9);
+  background-color: var(--color-red);
+}
+
+.image {
+  width: 900px;
+  height: 900px;
+}
+
+/*  */
+
+@media (max-width: 1445px) {
+  .field {
+    max-height: 400px;
+    gap: 80px;
+  }
+
+  .container {
+    padding: 70px 0 70px 70px;
+  }
+
+  .image {
+    width: 800px;
+    height: 800px;
+  }
+}
+
+@media (max-width: 1224px) {
+  .field {
+    max-height: 400px;
+    gap: 40px;
+  }
+
+  .container {
+    padding: 50px 0 50px 30px;
+  }
+
+  .content {
+    max-width: 320px;
+  }
+
+  .content h1 {
+    font-size: 34px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  .button {
+    width: 240px;
+    height: 64px;
+    font-size: 18px;
+  }
+
+  .image {
+    width: 700px;
+    height: 700px;
+  }
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+
+@media (max-width: 950px) {
+  .field {
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+
+    /* 🔥 фон */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("/about-us_bg.gif");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* ❌ скрываем img */
+  .image {
+    display: none;
+  }
+}

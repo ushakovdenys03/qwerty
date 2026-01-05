@@ -1,0 +1,42 @@
+/* .section {
+  background-color: var(--color-pink);
+} */
+
+.building {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding: 20px 30px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+/* <= 1024px — ноутбуки */
+@media (max-width: 1024px) {
+  .building {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* <= 768px — планшеты */
+@media (max-width: 768px) {
+  .building {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 20px;
+  }
+}
+
+/* <= 576px — мобильные */
+@media (max-width: 576px) {
+  .building {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 16px;
+  }
+}
