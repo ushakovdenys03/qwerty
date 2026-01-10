@@ -173,7 +173,7 @@ export default function Form({ id, selectedService }) {
             disabled={sending}
             aria-busy={sending}
           >
-            {sending ? "Sending..." : "Send_Message"}
+            {sending ? "sending..." : "send_message"}
           </button>
         </div>
       </form>

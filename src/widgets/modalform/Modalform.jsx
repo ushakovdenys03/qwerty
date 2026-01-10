@@ -142,10 +142,10 @@ export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
                 onClick={onClose}
                 disabled={sending}
               >
-                Cancel
+                cancel
               </button>
               <button type="submit" className={styles.send} disabled={sending}>
-                {sending ? "Sending..." : "Send Message"}
+                {sending ? "sending..." : "send_message"}
               </button>
             </div>
           </form>

@@ -47,16 +47,16 @@ export default function Footer() {
             <h2 className={styles.title}>Servises</h2>
             <div className={styles.information_content}>
               <a className={styles.list} href="#service_1">
-                Service_1
+                Web Development
               </a>
               <a className={styles.list} href="#service_2">
-                Service_2
+                AI-Powered Bots
               </a>
               <a className={styles.list} href="#service_3">
-                Service_3
+                Brand Identity & Guidelines
               </a>
               <a className={styles.list} href="#service_4">
-                Service_4
+                Social Media Setup & Branding
               </a>
             </div>
           </div>
@@ -65,16 +65,16 @@ export default function Footer() {
             <h2 className={styles.title}>Web_sites</h2>
             <div className={styles.information_content}>
               <a className={styles.list} href="#prices_1">
-                Landing
+                Online Stores & E-Commerce
               </a>
               <a className={styles.list} href="#prices_2">
-                Internet_shop
+                Business & Corporate Sites
               </a>
               <a className={styles.list} href="#prices_3">
-                Online_school
+                Marketing Landing Pages
               </a>
               <a className={styles.list} href="#prices_4">
-                GavnoIsJopy
+                Custom Web Applications
               </a>
             </div>
           </div>
@@ -156,13 +156,40 @@ export default function Footer() {
               />{" "}
               <p className={styles.text}>Facebook</p>
             </a>
+
+            <div className={styles.posts}>
+              <a
+                className={styles.links_logo}
+                href="mailto:bakunchmo@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                bakunchmo@gmail.com
+              </a>
+              <a
+                className={styles.links_logo}
+                href="mailto:vakulacomp03@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                vakulacomp03@gmail.com
+              </a>
+              <a
+                className={styles.links_logo}
+                href="mailto:ushakovdenys03@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ushakovdenys03@gmail.com
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       <div className={styles.copyright}>
         <div className={styles.divider} />
-        <p className={styles.text}>Copyright &copy; CompanyName 2025</p>
+        <p className={styles.text}>Copyright &copy; ApexSoft 2026</p>
       </div>
     </div>
   );

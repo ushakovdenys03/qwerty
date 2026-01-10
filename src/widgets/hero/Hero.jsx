@@ -13,7 +13,7 @@ export default function Hero() {
         </div>
         <a href="#prices_1">
           <button className={styles.button} typeof="button">
-            Web_sites
+            web_sites
           </button>
         </a>
       </div>

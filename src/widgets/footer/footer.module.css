@@ -129,6 +129,10 @@
   filter: brightness(0) invert(1);
 }
 
+.posts {
+  display: none;
+}
+
 /* bottom */
 
 .divider {
@@ -152,6 +156,10 @@
 /* ===================== */
 
 @media (max-width: 1024px) {
+  .footer {
+    gap: 0;
+  }
+
   .section {
     justify-content: center;
     gap: 0;
@@ -180,5 +188,12 @@
     padding: 20px 40px;
     gap: 30px;
     width: 280px;
+  }
+
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
   }
 }
