@@ -27,7 +27,7 @@ const pricesData = [
       "Mobile-responsive design",
       "SEO optimization for higher sales",
     ],
-    price: "3000",
+    price: "5000",
   },
   {
     id: "prices_2",
@@ -40,7 +40,7 @@ const pricesData = [
       "Contact forms & maps",
       "CMS panel",
     ],
-    price: "2000",
+    price: "3000",
     featured: true,
   },
   {
@@ -55,7 +55,7 @@ const pricesData = [
       "App Store",
       "GPay/ApplePay integrations",
     ],
-    price: "700",
+    price: "5000",
   },
   {
     id: "prices_4",
@@ -94,6 +94,24 @@ const portfolioSlides = [
     imageOne: <img src="/internetshop2.png" alt="thumb4" />,
     imageTwo: <img src="/internetshop3.png" alt="thumb5" />,
     imageThree: <img src="/internetshop1.png" alt="thumb6" />,
+  },
+  {
+    title: "Mobile Development",
+    description:
+      "Native and cross-platform mobile apps. Applications for you and your customers. ",
+    imageMain: <img src="/international_comopany1.png" alt="main" />,
+    imageOne: <img src="/international_comopany2.png" alt="thumb1" />,
+    imageTwo: <img src="/international_comopany3.png" alt="thumb2" />,
+    imageThree: <img src="/international_comopany4.png" alt="thumb3" />,
+  },
+  {
+    title: "Custom Web Applications",
+    description:
+      "Tailored web-based solutions including production tracking systems, inventory management, manufacturing dashboards, CRM/ERP integrations, and automated reporting tools",
+    imageMain: <img src="/international_comopany1.png" alt="main" />,
+    imageOne: <img src="/international_comopany2.png" alt="thumb1" />,
+    imageTwo: <img src="/international_comopany3.png" alt="thumb2" />,
+    imageThree: <img src="/international_comopany4.png" alt="thumb3" />,
   },
 ];
 
