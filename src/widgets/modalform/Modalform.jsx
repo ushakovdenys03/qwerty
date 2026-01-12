@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import styles from "./modalform.module.css";
 
 export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
@@ -12,6 +12,7 @@ export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
 
   const closeBtnRef = useRef(null);
 
+  /* ===== RESET ON OPEN ===== */
   useEffect(() => {
     if (isOpen) {
       setSelected(defaultPrice);
@@ -22,8 +23,39 @@ export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
     }
   }, [isOpen, defaultPrice]);
 
+  /* ===== EMAIL SENDER ===== */
+  const sendEmail = useCallback(
+    async ({ creation_date, title, main_text, name }) => {
+      const response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            service_id: "service_7k89wre",
+            template_id: "template_1xhkldc",
+            user_id: "zbvAAoiy554gF8jqW",
+            template_params: {
+              creation_date,
+              title,
+              main_text,
+              name,
+            },
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("EmailJS send failed");
+      }
+    },
+    []
+  );
+
   /* ===== VALIDATION ===== */
-  const validate = () => {
+  const validate = useCallback(() => {
     const e = {};
 
     if (!email) e.email = "Email is required.";
@@ -36,28 +68,39 @@ export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
 
     setErrors(e);
     return Object.keys(e).length === 0;
-  };
+  }, [email, message]);
 
   /* ===== SUBMIT ===== */
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
     setSending(true);
 
-    setTimeout(() => {
-      setSending(false);
-      setSent(true); // 🔥 форма исчезает
+    try {
+      await sendEmail({
+        service: selected.title,
+        email,
+        message,
+        price: selected.price,
+      });
+
+      setSent(true);
       document.body.style.overflow = "hidden";
-    }, 800);
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send email. Please try again later.");
+    } finally {
+      setSending(false);
+    }
   };
 
   /* ===== CLOSE SUCCESS ===== */
-  const closeSuccess = () => {
+  const closeSuccess = useCallback(() => {
     setSent(false);
     document.body.style.overflow = "";
     onClose();
-  };
+  }, [onClose]);
 
   useEffect(() => {
     if (sent) {

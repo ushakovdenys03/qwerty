@@ -1,0 +1,4 @@
+{
+  "title": "New contact request — {{service}}",
+  "main_text": "Hello Vladislav,\n\nYou have received a new request from your website.\n\n----------------------------------\nClient name: {{name}}\nClient email: {{email}}\nSelected service: {{service}}\n\nMessage from client:\n{{message}}\n----------------------------------\n\nSent at: {{creation_date}}"
+}

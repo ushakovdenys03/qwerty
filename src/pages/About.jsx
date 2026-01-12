@@ -35,7 +35,7 @@ export default function About() {
 
         <Link to="/#prices_1">
           <button className={styles.button} type="button">
-            Go_to_prices!
+            go_to_prices!
           </button>
         </Link>
       </div>

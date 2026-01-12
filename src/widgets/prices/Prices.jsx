@@ -27,7 +27,10 @@ export default function Prices({
 
           <ul className={styles.list}>
             {information.map((item) => (
-              <li key={item}>{item}</li>
+              <li className={styles.row} key={item}>
+                <p className={styles.textrow}>{item}</p>{" "}
+                <img className={styles.vector} src="Vector.png" alt="arrow" />
+              </li>
             ))}
           </ul>
         </div>

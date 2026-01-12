@@ -1,0 +1,98 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  font-size: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.text {
+  max-width: 450px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.description {
+  color: grey;
+  opacity: 90%;
+}
+/* Общий контейнер на весь экран */
+.carouselWrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fff; /* Или ваш цвет фона */
+}
+
+/* Окно, через которое мы видим один слайд */
+.carouselViewport {
+  width: 100%;
+  height: 100%;
+}
+
+/* Длинная лента со всеми слайдами */
+.carouselTrack {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Один полноэкранный слайд */
+.fullScreenSlide {
+  min-width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+/* Кнопки-стрелки */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.navButton:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Точки навигации */
+.dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.activeDot {
+  background: #333;
+}

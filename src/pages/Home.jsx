@@ -8,6 +8,7 @@ import Form from "../widgets/form/Form";
 import Footer from "../widgets/footer/Footer";
 import ModalForm from "../widgets/modalform/Modalform";
 import Hero from "../widgets/hero/Hero";
+import PortfolioAll from "../widgets/portfolio/PortfolioAll";
 
 /* ===============================
    SINGLE SOURCE OF TRUTH
@@ -34,28 +35,25 @@ const pricesData = [
     text: "Informational websites to showcase your company, services, team, and build trust with potential clients.",
     information: [
       "Professional custom design",
-      "Services & Portfolio showcase",
-      "About Us & Team sections",
-      "Blog & News integration",
+      "Services showcase",
+      "Blog integration",
       "Contact forms & maps",
-      "Testimonials & case studies",
-      "Fast loading & SEO-ready",
+      "CMS panel",
     ],
     price: "2000",
     featured: true,
   },
   {
     id: "prices_3",
-    title: "Marketing Landing Pages",
-    text: "Targeted one-page sites designed for ads, lead capture, and maximum conversion rates.",
+    title: "Mobile Development",
+    text: "Native and cross-platform mobile apps. Applications for you and your customers. ",
     information: [
-      "High-conversion layout",
-      "Eye-catching hero section",
-      "Lead capture forms",
-      "Call-to-action buttons",
-      "Social proof & testimonials",
-      "A/B testing ready",
-      "Integration with ads platforms",
+      "Admin and client apps",
+      "Super intuitive",
+      "Push notifications",
+      "Play Market",
+      "App Store",
+      "GPay/ApplePay integrations",
     ],
     price: "700",
   },
@@ -73,6 +71,29 @@ const pricesData = [
       "Data visualization charts",
     ],
     price: "1000",
+  },
+];
+
+// ПОРТФОЛИО
+
+const portfolioSlides = [
+  {
+    title: "Web Development",
+    description:
+      "Custom websites, e-commerce stores, landing pages, and web portals built with modern technologies for seamless user experience and high performance.",
+    imageMain: <img src="/international_comopany1.png" alt="main" />,
+    imageOne: <img src="/international_comopany2.png" alt="thumb1" />,
+    imageTwo: <img src="/international_comopany3.png" alt="thumb2" />,
+    imageThree: <img src="/international_comopany4.png" alt="thumb3" />,
+  },
+  {
+    title: "Online Stores & \nE-Commerce",
+    description:
+      "Scalable e-commerce platforms with shopping carts, payments, inventory managemen",
+    imageMain: <img src="/internetshop1.png" alt="main" />,
+    imageOne: <img src="/internetshop2.png" alt="thumb4" />,
+    imageTwo: <img src="/internetshop3.png" alt="thumb5" />,
+    imageThree: <img src="/internetshop1.png" alt="thumb6" />,
   },
 ];
 
@@ -131,6 +152,8 @@ export default function Home() {
 
       {/* SERVICES */}
       <Services onSelectService={setSelectedService} />
+
+      <PortfolioAll slides={portfolioSlides} />
 
       {/* PRICES */}
       <PricesAll pricesData={pricesData} onOrderClick={openModal} />

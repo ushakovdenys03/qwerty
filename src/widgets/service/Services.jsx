@@ -22,18 +22,18 @@ export default function Services({ onSelectService }) {
 
         <Service
           id="service_3"
-          title="Brand Identity & Guidelines"
-          text="Comprehensive brand books including logo, color palette, typography, and usage rules to ensure consistent and professional branding"
+          title="Mobile Development"
+          text="Mobile apps for you and your clients. Developed for iOS and Android. Your company on your phone!"
           link="#form"
-          onClick={() => onSelectService("Brand Identity & Guidelines")}
+          onClick={() => onSelectService("Mobile Development")}
         />
 
         <Service
           id="service_4"
-          title="Social Media Setup & Branding"
-          text="Full creation and optimization of social media profiles across platforms, including content strategy, visuals, and initial setup"
+          title="Brand Identity & Guidelines"
+          text=" Comprehensive brand books including logo, color palette, typography, and usage rules to ensure consistent and professional branding"
           link="#form"
-          onClick={() => onSelectService("Social Media Setup & Branding")}
+          onClick={() => onSelectService("Brand Identity & Guidelines")}
         />
       </div>
     </div>

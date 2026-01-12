@@ -2,6 +2,19 @@
   background-color: var(--color-pink);
 } */
 
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.text {
+  max-width: 450px;
+  text-align: center;
+  padding: 0 10px;
+}
+
 .building {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -9,11 +22,17 @@
   padding: 20px 30px;
 }
 
+.description {
+  color: grey;
+  opacity: 90%;
+}
+
 .title {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 0;
+  padding-top: 20px;
+  font-size: 40px;
 }
 
 .span {
