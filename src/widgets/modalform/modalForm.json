@@ -1,0 +1,4 @@
+{
+  "title": "New Modal Inquiry — {{service}}",
+  "main_text": "Hello Vladislav,\n\nYou have received a new service request via the Modal Form.\n\n----------------------------------\nClient name: {{name}}\nClient email: {{email}}\nSelected service: {{service}}\nBase price starting from: ${{price}}\n\nMessage from client:\n{{message}}\n----------------------------------\n\nSent at: {{creation_date}}"
+}

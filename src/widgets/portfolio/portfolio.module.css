@@ -1,14 +1,21 @@
+/* ========================= */
+/* ОСНОВНОЙ LAYOUT */
+/* ========================= */
+
 .field {
   display: flex;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 30px;
   align-items: flex-start;
+  gap: 30px;
   padding: 20px;
 }
 
-/* ЛЕВАЯ ЧАСТЬ: Главное фото + текст */
+/* ========================= */
+/* ЛЕВАЯ ЧАСТЬ */
+/* ========================= */
+
 .container {
   flex: 1;
   display: flex;
@@ -16,17 +23,16 @@
   gap: 15px;
 }
 
+/* ========================= */
+/* ГЛАВНАЯ КАРТИНКА */
+/* ========================= */
+
 .mainImageWrapper {
   width: 100%;
   height: 500px;
   overflow: hidden;
   border-radius: 8px;
   cursor: zoom-in;
-  transition: transform 0.3s ease;
-}
-
-.mainImageWrapper:hover {
-  transform: scale(0.9);
 }
 
 .mainImageWrapper img {
@@ -36,43 +42,178 @@
   background-color: #f0f0f0;
 }
 
-/* ПРАВАЯ ЧАСТЬ: Три маленьких фото */
+/* ========================= */
+/* ПРАВАЯ ЧАСТЬ */
+/* ========================= */
+
 .content {
   display: flex;
   flex-direction: column;
-  padding: 0;
-  max-width: 400px;
-  height: auto;
-  gap: 0;
+  width: 400px;
 }
 
+/* ========================= */
+/* МАЛЕНЬКИЕ КАРТИНКИ */
+/* ========================= */
+
 .smallImg {
-  width: 400px;
+  width: 100%;
   height: 200px;
   overflow: hidden;
   cursor: zoom-in;
-  transition: transform 0.3s ease;
-}
-
-.smallImg:hover {
-  transform: scale(0.9);
 }
 
 .smallImg img {
   width: 100%;
   height: 100%;
-  /* Заменяем contain на cover */
   object-fit: cover;
-  cursor: zoom-in;
 }
 
-/* Стили для заголовка и текста */
-.container h2 {
+/* ========================= */
+/* ТЕКСТ */
+/* ========================= */
+
+.desktopText {
+  display: block;
+}
+
+.container h2.desktopText {
   margin: 0;
   font-size: 1.8rem;
 }
 
-.container p {
+.container p.desktopText {
   margin: 0;
   line-height: 1.5;
+}
+
+/* ========================= */
+/* МОБИЛЬНЫЙ ТЕКСТ */
+/* ========================= */
+
+.mobileText {
+  display: none;
+}
+
+/* ========================= */
+/* 📱 МОБИЛЬНЫЙ ВИД */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .field {
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+    display: block; /* Меняем flex на block для мобилок, чтобы элементы шли друг за другом */
+  }
+
+  /* ЛЕВАЯ ЧАСТЬ (где главная картинка) */
+  .container {
+    width: 100%;
+    display: block;
+  }
+
+  .mainImageWrapper {
+    width: calc(100% - 32px); /* Учитываем отступы 16px с двух сторон */
+    height: 300px; /* Даем фиксированную высоту или мин-высоту */
+    margin: 20px auto; /* Центрируем */
+    border-radius: 8px;
+    overflow: visible; /* Чтобы картинка точно была видна */
+  }
+
+  .mainImageWrapper img {
+    object-fit: cover; /* На мобилках cover обычно выглядит лучше */
+  }
+
+  /* ПРАВАЯ ЧАСТЬ (маленькие картинки) */
+  .content {
+    width: calc(100% - 32px);
+    margin: 0 auto 20px;
+    flex-direction: row; /* Выстраиваем в ряд */
+    display: flex;
+    gap: 10px; /* Добавляем зазор между маленькими фото */
+  }
+
+  .smallImg {
+    flex: 1; /* Чтобы все три занимали равное место */
+    height: 100px; /* Фиксированная высота для маленьких */
+    border-radius: 4px;
+  }
+
+  /* ТЕКСТ */
+  .desktopText {
+    display: none !important;
+  }
+
+  .mobileText {
+    display: block !important;
+    padding: 0 16px 40px; /* Больше отступ снизу */
+    width: 100%;
+    box-sizing: border-box; /* Чтобы padding не раздувал ширину */
+  }
+
+  .mobileText h2 {
+    display: block;
+    margin-bottom: 10px;
+    color: inherit; /* Убедитесь, что цвет не белый на белом */
+  }
+}
+
+/* ========================= */
+/* 📱 АДАПТИВ ПОД 600PX И НИЖЕ */
+/* ========================= */
+
+@media (max-width: 600px) {
+  .field {
+    padding: 0 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем всё содержимое */
+  }
+
+  /* ГЛАВНАЯ КАРТИНКА: Строго вписываем в экран */
+  .mainImageWrapper {
+    width: 100%;
+    /* Ограничиваем высоту до 40% высоты экрана, чтобы осталось место для текста */
+    height: 40vh;
+    max-height: 300px;
+    margin: 10px 0;
+  }
+
+  .mainImageWrapper img {
+    object-fit: contain; /* Картинка не обрежется, а впишется полностью */
+    background-color: transparent;
+  }
+
+  /* МАЛЕНЬКИЕ КАРТИНКИ: Убираем одну */
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .smallImg {
+    flex: 1;
+    height: 120px; /* Немного увеличим оставшиеся две для удобства клика */
+  }
+
+  /* Прячем третью картинку (imageThree) */
+  .smallImg:nth-child(3) {
+    display: none;
+  }
+
+  /* ТЕКСТ */
+  .mobileText {
+    padding: 15px 5px;
+    text-align: left;
+  }
+
+  .mobileText h2 {
+    font-size: 1.2rem;
+  }
+
+  .mobileText p {
+    font-size: 0.9rem;
+  }
 }

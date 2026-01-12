@@ -36,8 +36,9 @@ export default function Portfolio({
         >
           {imageMain}
         </div>
-        <h2>{title}</h2>
-        <p>{description}</p>
+
+        <h2 className={styles.desktopText}>{title}</h2>
+        <p className={styles.desktopText}>{description}</p>
       </div>
 
       <div className={styles.content}>
@@ -50,6 +51,12 @@ export default function Portfolio({
         <div className={styles.smallImg} onClick={() => openLightbox(3)}>
           {imageThree}
         </div>
+      </div>
+
+      {/* ✅ ТЕКСТ ПОСЛЕ КАРТИНОК */}
+      <div className={styles.mobileText}>
+        <h2>{title}</h2>
+        <p>{description}</p>
       </div>
 
       {/* Ключ key заставляет лайтбокс полностью пересоздаться при смене слайда */}

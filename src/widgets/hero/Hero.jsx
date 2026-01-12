@@ -4,7 +4,7 @@ export default function Hero() {
     <div className={styles.field}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <h1>Wev_Developing</h1>
+          <h1>Web_Developing</h1>
           <p>Move your business into web univerce</p>
           <p>
             Development of web-services, portals, e-shops, commercial platforms

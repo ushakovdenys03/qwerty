@@ -96,3 +96,32 @@
 .activeDot {
   background: #333;
 }
+
+/* Позиционирование кнопок (добавьте если нет) */
+.prev {
+  left: 20px;
+}
+.next {
+  right: 20px;
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 768px) {
+  .navButton {
+    display: none; /* Скрываем стрелки */
+  }
+
+  .carouselWrapper {
+    height: auto; /* На мобилках высота подстраивается под контент */
+    min-height: 500px;
+  }
+
+  .dots {
+    bottom: 15px; /* Поднимаем точки чуть выше для удобства */
+  }
+
+  .dot {
+    width: 14px; /* Делаем точки чуть крупнее для пальцев */
+    height: 14px;
+  }
+}

@@ -4,6 +4,11 @@ import styles from "./portfolioAll.module.css";
 
 export default function PortfolioAll({ slides }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  // Минимальное расстояние для свайпа
+  const minSwipeDistance = 50;
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -11,6 +16,29 @@ export default function PortfolioAll({ slides }) {
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  /* === ЛОГИКА СВАЙПА === */
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
   };
 
   return (
@@ -25,11 +53,17 @@ export default function PortfolioAll({ slides }) {
           using the form below!
         </p>
       </div>
-      <div className={styles.carouselWrapper}>
+
+      <div
+        className={styles.carouselWrapper}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        {/* Кнопки теперь будут скрываться через CSS на мобилках */}
         <button
-          className={styles.navButton}
+          className={`${styles.navButton} ${styles.prev}`}
           onClick={prevSlide}
-          style={{ left: "20px" }}
         >
           ‹
         </button>
@@ -48,7 +82,6 @@ export default function PortfolioAll({ slides }) {
                   imageThree={slide.imageThree}
                   title={slide.title}
                   description={slide.description}
-                  // Передаем индекс текущего слайда карусели
                   slideIndex={currentIndex}
                 />
               </div>
@@ -57,9 +90,8 @@ export default function PortfolioAll({ slides }) {
         </div>
 
         <button
-          className={styles.navButton}
+          className={`${styles.navButton} ${styles.next}`}
           onClick={nextSlide}
-          style={{ right: "20px" }}
         >
           ›
         </button>

@@ -16,21 +16,14 @@ export default function Footer() {
             Full-cycle digital agency specializing in web development,
             automation, and branding solutions.
           </p>
+
           <a
             className={styles.links_logo}
-            href="mailto:bakunchmo@gmail.com"
+            href="mailto:vladislav4web@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            bakunchmo@gmail.com
-          </a>
-          <a
-            className={styles.links_logo}
-            href="mailto:vakulacomp03@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            vakulacomp03@gmail.com
+            vladislav4web@gmail.com
           </a>
           <a
             className={styles.links_logo}
@@ -160,19 +153,11 @@ export default function Footer() {
             <div className={styles.posts}>
               <a
                 className={styles.links_logo}
-                href="mailto:bakunchmo@gmail.com"
+                href="mailto:vladislav4web@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                bakunchmo@gmail.com
-              </a>
-              <a
-                className={styles.links_logo}
-                href="mailto:vakulacomp03@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                vakulacomp03@gmail.com
+                vladislav4web@gmail.com
               </a>
               <a
                 className={styles.links_logo}
