@@ -15,6 +15,9 @@ export default function PortfolioAll({ slides }) {
 
   return (
     <div className={styles.mainContainer}>
+      <h2 className={styles.maintitle}>Library</h2>
+      <p className={styles.maintext}>Examples of our services</p>
+
       <div className={styles.carouselWrapper}>
         <button
           className={`${styles.navButton} ${styles.prev}`}

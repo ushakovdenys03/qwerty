@@ -87,7 +87,7 @@ const portfolioSlides = [
     imageThree: <img src="/internetshop4.png" alt="thumb6" />,
   },
   {
-    title: "Web Development",
+    title: "Business & \nCorporate Sites",
     description:
       "Custom websites, e-commerce stores, landing pages, and web portals built with modern technologies for seamless user experience and high performance.",
     imageMain: <img src="/international_comopany1.png" alt="main" />,

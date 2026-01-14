@@ -1,16 +1,20 @@
 import styles from "./service.module.css";
 
-export default function Service({ id, title, text, link, onClick, image }) {
+export default function Service({
+  id,
+  icon,
+  title,
+  text,
+  link,
+  onClick,
+  image,
+}) {
   return (
     <div id={id}>
       <div className={styles.container}>
         <a href={link} onClick={onClick}>
           <div className={styles.content}>
-            <img
-              className={styles.image}
-              src="/eos-icons_admin-outlined.svg"
-              alt="admin-icon"
-            />
+            <img className={styles.image} src={icon} alt="admin-icon" />
             <h2 className={styles.title}>{title}</h2>
             <p className={styles.text}>{text}</p>
 

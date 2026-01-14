@@ -18,7 +18,7 @@
   transition: 0.3s;
   z-index: 1;
   background: var(--color-dark);
-  opacity: 50%;
+  opacity: 60%;
 }
 
 .container:hover::after {

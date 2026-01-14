@@ -1,3 +1,29 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.text {
+  max-width: 450px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.description {
+  color: grey;
+  opacity: 90%;
+}
+
+.maintitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  font-size: 40px;
+}
+
 /* .section {
   background-color: var(--color-pink);
 } */
