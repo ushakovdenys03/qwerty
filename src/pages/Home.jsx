@@ -78,15 +78,6 @@ const pricesData = [
 
 const portfolioSlides = [
   {
-    title: "Web Development",
-    description:
-      "Custom websites, e-commerce stores, landing pages, and web portals built with modern technologies for seamless user experience and high performance.",
-    imageMain: <img src="/international_comopany1.png" alt="main" />,
-    imageOne: <img src="/international_comopany2.png" alt="thumb1" />,
-    imageTwo: <img src="/international_comopany3.png" alt="thumb2" />,
-    imageThree: <img src="/international_comopany4.png" alt="thumb3" />,
-  },
-  {
     title: "Online Stores & \nE-Commerce",
     description:
       "Scalable e-commerce platforms with shopping carts, payments, inventory managemen",
@@ -94,6 +85,15 @@ const portfolioSlides = [
     imageOne: <img src="/internetshop2.png" alt="thumb4" />,
     imageTwo: <img src="/internetshop3.png" alt="thumb5" />,
     imageThree: <img src="/internetshop4.png" alt="thumb6" />,
+  },
+  {
+    title: "Web Development",
+    description:
+      "Custom websites, e-commerce stores, landing pages, and web portals built with modern technologies for seamless user experience and high performance.",
+    imageMain: <img src="/international_comopany1.png" alt="main" />,
+    imageOne: <img src="/international_comopany2.png" alt="thumb1" />,
+    imageTwo: <img src="/international_comopany3.png" alt="thumb2" />,
+    imageThree: <img src="/international_comopany4.png" alt="thumb3" />,
   },
   {
     title: "Mobile Development",
