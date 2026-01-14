@@ -5,12 +5,12 @@ export default function Services({ onSelectService }) {
     <div className={styles.section}>
       <div className={styles.content}>
         <h2 className={styles.maintitle}>Services</h2>
-        <p className={styles.description}>Prices of your applications</p>
+        <p className={styles.description}>Find a service for you!</p>
         <p className={styles.text}>
-          Here's a list of our standard services. Our consultants can help you
-          find the right one for you. Don't hesitate to contact us. We'll
-          customize your order just for you! If in doubt, please contact us
-          using the form below!
+          We provide a wide range of services for the comfort of our clients.
+          It's important to us that you find a comfortable experience on our
+          website. Mobile apps, web services, and websites are available for
+          you, your employees, and your clients.
         </p>
       </div>
       <div className={styles.building}>
