@@ -132,12 +132,12 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: 50%; /* На мобилках лучше на весь экран или 80% */
+  width: 50%;
   max-width: 320px;
   background: var(--color-dark);
   color: var(--color-white);
   font-family: "Plus Jakarta Sans", sans-serif;
-  padding: 80px 32px 40px; /* Больше отступ сверху под кнопку закрытия */
+  padding: 80px 32px 40px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -168,7 +168,7 @@
 
 .burgerMenu .navItem,
 .burgerMenu .element {
-  font-size: 20px; /* Крупнее шрифт */
+  font-size: 20px;
   font-weight: 600;
   padding: 12px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -176,12 +176,6 @@
   display: flex;
   justify-content: flex-start;
   transition: color 0.3s ease;
-}
-
-.burgerMenu .navItem:hover,
-.burgerMenu .element:hover {
-  color: var(--color-red);
-  transform: none; /* Убираем scale, тут он дешевит вид */
 }
 
 /* Кастомный крестик закрытия */
@@ -194,18 +188,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0);
   border-radius: 50%;
   border: none;
   color: var(--color-white);
   font-size: 24px;
   cursor: pointer;
   transition: 0.3s;
-}
-
-.close:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: rotate(90deg);
 }
 
 /* Плавный Overlay */
@@ -250,12 +239,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    transition: 0.3s;
     z-index: 997;
-  }
-
-  .burger:hover {
-    transform: scale(0.9);
   }
 
   .burger span {

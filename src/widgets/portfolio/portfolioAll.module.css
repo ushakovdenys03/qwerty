@@ -134,24 +134,13 @@
 }
 
 /* --- Адаптив для мобильных --- */
-@media (max-width: 768px) {
-  .navButton {
+@media (max-width: 900px) {
+  .mainContainer {
     display: none !important;
-  }
-
-  .title {
-    font-size: 28px;
-  }
-
-  .carouselWrapper {
-    height: auto;
-    /* На мобильных высота будет подстраиваться, но с запасом под точки */
-    min-height: 550px;
-  }
-
-  .fullScreenSlide {
-    height: auto;
-    min-height: 500px;
-    padding: 0 15px 70px 15px; /* Увеличенный нижний отступ на мобильных */
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
   }
 }

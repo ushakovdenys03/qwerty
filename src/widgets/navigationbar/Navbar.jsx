@@ -11,24 +11,24 @@ export default function Navbar({ onOrderClick }) {
     setOpenIndex((prev) => (prev === i ? null : i));
   };
 
-  const scrollToSection = (e, id) => {
-    // Останавливаем стандартное поведение, чтобы убрать мобильную задержку
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-
-    // Сразу закрываем меню
+  // Единая функция для закрытия меню
+  const handleMenuClose = () => {
     setBurgerOpen(false);
     setOpenIndex(null);
+  };
 
-    // Запускаем скролл
+  // Улучшенная версия с надёжным закрытием + скроллом
+  const scrollToSectionAndClose = (e, id) => {
+    e.preventDefault();
+    handleMenuClose();
+
+    // Даём небольшую задержку, чтобы анимация закрытия меню успела начаться
     setTimeout(() => {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    }, 50);
+    }, 150);
   };
 
   useEffect(() => {
@@ -47,15 +47,12 @@ export default function Navbar({ onOrderClick }) {
 
     const handleEsc = (event) => {
       if (event.key === "Escape") {
-        setOpenIndex(null);
-        setBurgerOpen(false);
+        handleMenuClose();
       }
     };
 
     document.addEventListener("mousedown", handleOutsideClick);
-    document.addEventListener("touchstart", handleOutsideClick, {
-      passive: true,
-    });
+    document.addEventListener("touchstart", handleOutsideClick);
     document.addEventListener("keydown", handleEsc);
 
     return () => {
@@ -67,26 +64,25 @@ export default function Navbar({ onOrderClick }) {
 
   return (
     <>
-      {/* Затемнение фона при открытом меню */}
+      {/* Затемнение фона */}
       {burgerOpen && (
-        <div className={styles.overlay} onClick={() => setBurgerOpen(false)} />
+        <div className={styles.overlay} onClick={handleMenuClose} />
       )}
 
       <div className={styles.container}>
-        {/* Кнопка бургера */}
         <button className={styles.burger} onClick={() => setBurgerOpen(true)}>
           <span />
           <span />
           <span />
         </button>
 
-        <a href="/">
+        <a href="/" onClick={handleMenuClose}>
           <img className={styles.logo} src="/Logo.png" alt="logo" />
         </a>
 
         <div className={styles.content}>
           <div className={styles.navigation} ref={navRef}>
-            {/* Desktop: Services с выпадающим списком */}
+            {/* Desktop Services */}
             <div className={styles.elementWrapper}>
               <button
                 className={styles.element}
@@ -105,44 +101,45 @@ export default function Navbar({ onOrderClick }) {
                   <path d="M7 10l5 5 5-5H7z" fill="currentColor" />
                 </svg>
               </button>
+
               {openIndex === 1 && (
                 <ul className={styles.dropdown}>
                   <li
                     className={styles.dropdownItem}
-                    onClick={(e) => scrollToSection(e, "service_1")}
+                    onClick={(e) => scrollToSectionAndClose(e, "service_1")}
                   >
                     Web Development
                   </li>
                   <li
                     className={styles.dropdownItem}
-                    onClick={(e) => scrollToSection(e, "service_2")}
+                    onClick={(e) => scrollToSectionAndClose(e, "service_2")}
                   >
                     AI-Powered Bots
                   </li>
                   <li
                     className={styles.dropdownItem}
-                    onClick={(e) => scrollToSection(e, "service_3")}
+                    onClick={(e) => scrollToSectionAndClose(e, "service_3")}
                   >
-                    Brand Identity & Guidelines
+                    Mobile Development
                   </li>
                   <li
                     className={styles.dropdownItem}
-                    onClick={(e) => scrollToSection(e, "service_4")}
+                    onClick={(e) => scrollToSectionAndClose(e, "service_4")}
                   >
-                    Social Media Setup & Branding
+                    Brand Identity & Guidelines
                   </li>
                 </ul>
               )}
             </div>
 
-            {/* Desktop: Orders с выпадающим списком */}
+            {/* Desktop Orders */}
             <div className={styles.elementWrapper}>
               <button
                 className={styles.element}
                 type="button"
                 onClick={() => toggle(2)}
               >
-                <p className={styles.elementText}>Orders</p>
+                <p className={styles.elementText}>Web Development</p>
                 <svg
                   className={`${styles.arrow} ${
                     openIndex === 2 ? styles.open : ""
@@ -154,29 +151,30 @@ export default function Navbar({ onOrderClick }) {
                   <path d="M7 10l5 5 5-5H7z" fill="currentColor" />
                 </svg>
               </button>
+
               {openIndex === 2 && (
                 <ul className={styles.dropdown}>
                   <li
                     className={styles.dropdownItem}
-                    onClick={(e) => scrollToSection(e, "prices_1")}
+                    onClick={(e) => scrollToSectionAndClose(e, "prices_1")}
                   >
                     Online Stores & E-Commerce
                   </li>
                   <li
                     className={styles.dropdownItem}
-                    onClick={(e) => scrollToSection(e, "prices_2")}
+                    onClick={(e) => scrollToSectionAndClose(e, "prices_2")}
                   >
                     Business & Corporate Sites
                   </li>
                   <li
                     className={styles.dropdownItem}
-                    onClick={(e) => scrollToSection(e, "prices_3")}
+                    onClick={(e) => scrollToSectionAndClose(e, "prices_3")}
                   >
-                    Marketing Landing Pages
+                    Mobile Development
                   </li>
                   <li
                     className={styles.dropdownItem}
-                    onClick={(e) => scrollToSection(e, "prices_4")}
+                    onClick={(e) => scrollToSectionAndClose(e, "prices_4")}
                   >
                     Custom Web Applications
                   </li>
@@ -189,13 +187,20 @@ export default function Navbar({ onOrderClick }) {
               href="/about"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleMenuClose}
             >
               <p className={styles.elementText}>About_us</p>
             </a>
           </div>
 
           <div className={styles.buttons}>
-            <button className={styles.button} onClick={onOrderClick}>
+            <button
+              className={styles.button}
+              onClick={() => {
+                onOrderClick();
+                handleMenuClose();
+              }}
+            >
               become_partner
             </button>
           </div>
@@ -209,25 +214,25 @@ export default function Navbar({ onOrderClick }) {
           burgerOpen ? styles.burgerOpen : ""
         }`}
       >
-        <button className={styles.close} onClick={() => setBurgerOpen(false)}>
+        <button className={styles.close} onClick={handleMenuClose}>
           ✕
         </button>
-        <img src="/Logo.png" alt="logo" />
+
+        <img src="/Logo.png" alt="logo" onClick={handleMenuClose} />
 
         <div className={styles.mobileLinks}>
-          {/* В мобилке просто ссылки, которые закрывают меню и скроллят */}
           <div
             className={styles.navItem}
-            onClick={(e) => scrollToSection(e, "service_1")}
+            onClick={(e) => scrollToSectionAndClose(e, "service_1")}
           >
             <p className={styles.elementText}>Services</p>
           </div>
 
           <div
             className={styles.navItem}
-            onClick={(e) => scrollToSection(e, "prices_1")}
+            onClick={(e) => scrollToSectionAndClose(e, "prices_1")}
           >
-            <p className={styles.elementText}>Orders</p>
+            <p className={styles.elementText}>Web Development</p>
           </div>
 
           <a
@@ -235,6 +240,7 @@ export default function Navbar({ onOrderClick }) {
             href="/about"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleMenuClose}
           >
             <p className={styles.elementText}>About_us</p>
           </a>
