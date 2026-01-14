@@ -11,17 +11,24 @@ export default function Navbar({ onOrderClick }) {
     setOpenIndex((prev) => (prev === i ? null : i));
   };
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (e, id) => {
+    // Останавливаем стандартное поведение, чтобы убрать мобильную задержку
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    // Сразу закрываем меню
     setBurgerOpen(false);
     setOpenIndex(null);
 
-    // Задержка (залетела что-ли, хз)
+    // Запускаем скролл
     setTimeout(() => {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    }, 100);
+    }, 50);
   };
 
   useEffect(() => {
@@ -29,7 +36,6 @@ export default function Navbar({ onOrderClick }) {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setOpenIndex(null);
       }
-
       if (
         burgerOpen &&
         mobileRef.current &&
@@ -47,7 +53,9 @@ export default function Navbar({ onOrderClick }) {
     };
 
     document.addEventListener("mousedown", handleOutsideClick);
-    document.addEventListener("touchstart", handleOutsideClick);
+    document.addEventListener("touchstart", handleOutsideClick, {
+      passive: true,
+    });
     document.addEventListener("keydown", handleEsc);
 
     return () => {
@@ -59,12 +67,13 @@ export default function Navbar({ onOrderClick }) {
 
   return (
     <>
-      {/* OVERLAY для мобилки */}
+      {/* Затемнение фона при открытом меню */}
       {burgerOpen && (
         <div className={styles.overlay} onClick={() => setBurgerOpen(false)} />
       )}
 
       <div className={styles.container}>
+        {/* Кнопка бургера */}
         <button className={styles.burger} onClick={() => setBurgerOpen(true)}>
           <span />
           <span />
@@ -77,6 +86,7 @@ export default function Navbar({ onOrderClick }) {
 
         <div className={styles.content}>
           <div className={styles.navigation} ref={navRef}>
+            {/* Desktop: Services с выпадающим списком */}
             <div className={styles.elementWrapper}>
               <button
                 className={styles.element}
@@ -99,25 +109,25 @@ export default function Navbar({ onOrderClick }) {
                 <ul className={styles.dropdown}>
                   <li
                     className={styles.dropdownItem}
-                    onClick={() => scrollToSection("service_1")}
+                    onClick={(e) => scrollToSection(e, "service_1")}
                   >
                     Web Development
                   </li>
                   <li
                     className={styles.dropdownItem}
-                    onClick={() => scrollToSection("service_2")}
+                    onClick={(e) => scrollToSection(e, "service_2")}
                   >
                     AI-Powered Bots
                   </li>
                   <li
                     className={styles.dropdownItem}
-                    onClick={() => scrollToSection("service_3")}
+                    onClick={(e) => scrollToSection(e, "service_3")}
                   >
                     Brand Identity & Guidelines
                   </li>
                   <li
                     className={styles.dropdownItem}
-                    onClick={() => scrollToSection("service_4")}
+                    onClick={(e) => scrollToSection(e, "service_4")}
                   >
                     Social Media Setup & Branding
                   </li>
@@ -125,6 +135,7 @@ export default function Navbar({ onOrderClick }) {
               )}
             </div>
 
+            {/* Desktop: Orders с выпадающим списком */}
             <div className={styles.elementWrapper}>
               <button
                 className={styles.element}
@@ -147,25 +158,25 @@ export default function Navbar({ onOrderClick }) {
                 <ul className={styles.dropdown}>
                   <li
                     className={styles.dropdownItem}
-                    onClick={() => scrollToSection("prices_1")}
+                    onClick={(e) => scrollToSection(e, "prices_1")}
                   >
                     Online Stores & E-Commerce
                   </li>
                   <li
                     className={styles.dropdownItem}
-                    onClick={() => scrollToSection("prices_2")}
+                    onClick={(e) => scrollToSection(e, "prices_2")}
                   >
                     Business & Corporate Sites
                   </li>
                   <li
                     className={styles.dropdownItem}
-                    onClick={() => scrollToSection("prices_3")}
+                    onClick={(e) => scrollToSection(e, "prices_3")}
                   >
                     Marketing Landing Pages
                   </li>
                   <li
                     className={styles.dropdownItem}
-                    onClick={() => scrollToSection("prices_4")}
+                    onClick={(e) => scrollToSection(e, "prices_4")}
                   >
                     Custom Web Applications
                   </li>
@@ -191,130 +202,43 @@ export default function Navbar({ onOrderClick }) {
         </div>
       </div>
 
+      {/* MOBILE MENU */}
       <div
         ref={mobileRef}
         className={`${styles.burgerMenu} ${
           burgerOpen ? styles.burgerOpen : ""
         }`}
-        onClick={(e) => e.stopPropagation()}
       >
-        <button
-          className={styles.close}
-          onClick={() => setBurgerOpen(false)}
-          aria-label="Close menu"
-        >
+        <button className={styles.close} onClick={() => setBurgerOpen(false)}>
           ✕
         </button>
         <img src="/Logo.png" alt="logo" />
 
-        {/* Кароче, вся фигня вот тут вот */}
-
-        <div className={styles.elementWrapper}>
-          <button
-            className={styles.element}
-            type="button"
-            onClick={() => toggle(10)}
+        <div className={styles.mobileLinks}>
+          {/* В мобилке просто ссылки, которые закрывают меню и скроллят */}
+          <div
+            className={styles.navItem}
+            onClick={(e) => scrollToSection(e, "service_1")}
           >
             <p className={styles.elementText}>Services</p>
-            <svg
-              className={`${styles.arrow} ${
-                openIndex === 10 ? styles.open : ""
-              }`}
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-            >
-              <path d="M7 10l5 5 5-5H7z" fill="currentColor" />
-            </svg>
-          </button>
-          {openIndex === 10 && (
-            <ul className={styles.dropdown}>
-              {/* А именно тут */}
-              <li
-                className={styles.dropdownItem}
-                onClick={() => scrollToSection("service_1")}
-              >
-                Web Development
-              </li>
-              <li
-                className={styles.dropdownItem}
-                onClick={() => scrollToSection("service_2")}
-              >
-                AI-Powered Bots
-              </li>
-              <li
-                className={styles.dropdownItem}
-                onClick={() => scrollToSection("service_3")}
-              >
-                Brand Identity & Guidelines
-              </li>
-              <li
-                className={styles.dropdownItem}
-                onClick={() => scrollToSection("service_4")}
-              >
-                Social Media Setup & Branding
-              </li>
-            </ul>
-          )}
-        </div>
+          </div>
 
-        <div className={styles.elementWrapper}>
-          <button
-            className={styles.element}
-            type="button"
-            onClick={() => toggle(20)}
+          <div
+            className={styles.navItem}
+            onClick={(e) => scrollToSection(e, "prices_1")}
           >
             <p className={styles.elementText}>Orders</p>
-            <svg
-              className={`${styles.arrow} ${
-                openIndex === 20 ? styles.open : ""
-              }`}
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-            >
-              <path d="M7 10l5 5 5-5H7z" fill="currentColor" />
-            </svg>
-          </button>
-          {openIndex === 20 && (
-            <ul className={styles.dropdown}>
-              {/* Ну и ещё тут */}
-              <li
-                className={styles.dropdownItem}
-                onClick={() => scrollToSection("prices_1")}
-              >
-                Online Stores & E-Commerce
-              </li>
-              <li
-                className={styles.dropdownItem}
-                onClick={() => scrollToSection("prices_2")}
-              >
-                Business & Corporate Sites
-              </li>
-              <li
-                className={styles.dropdownItem}
-                onClick={() => scrollToSection("prices_3")}
-              >
-                Marketing Landing Pages
-              </li>
-              <li
-                className={styles.dropdownItem}
-                onClick={() => scrollToSection("prices_4")}
-              >
-                Custom Web Applications
-              </li>
-            </ul>
-          )}
-        </div>
+          </div>
 
-        <a
-          className={styles.navItem}
-          href="/about"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p className={styles.elementText}>About_us</p>
-        </a>
+          <a
+            className={styles.navItem}
+            href="/about"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p className={styles.elementText}>About_us</p>
+          </a>
+        </div>
       </div>
     </>
   );

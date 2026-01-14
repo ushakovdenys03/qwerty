@@ -1,9 +1,20 @@
+/* --- Базовая обертка и текст --- */
+.mainContainer {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+
 .title {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 20px;
   font-size: 40px;
+  text-align: center;
 }
 
 .content {
@@ -11,6 +22,8 @@
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
 }
 
 .text {
@@ -21,107 +34,124 @@
 
 .description {
   color: grey;
-  opacity: 90%;
-}
-/* Общий контейнер на весь экран */
-.carouselWrapper {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #fff; /* Или ваш цвет фона */
+  opacity: 0.9;
 }
 
-/* Окно, через которое мы видим один слайд */
+/* --- Контейнер карусели --- */
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  /* Увеличили общую высоту, чтобы точки поместились под контентом */
+  height: 700px;
+  overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .carouselViewport {
   width: 100%;
   height: 100%;
 }
 
-/* Длинная лента со всеми слайдами */
 .carouselTrack {
   display: flex;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
 }
 
-/* Один полноэкранный слайд */
 .fullScreenSlide {
-  min-width: 100vw;
-  height: 100vh;
+  min-width: 100%;
+  width: 100%;
+  flex-shrink: 0;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
+  /* Добавили отступ снизу внутри слайда, чтобы отодвинуть текст от точек */
+  padding-bottom: 60px;
+  box-sizing: border-box;
 }
 
-/* Кнопки-стрелки */
+/* --- Кнопки (Только для ПК) --- */
 .navButton {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.1);
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  cursor: pointer;
   z-index: 10;
+  width: 50px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
   transition: background 0.3s;
 }
 
 .navButton:hover {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.6);
 }
 
-/* Точки навигации */
+.prev {
+  left: 0;
+  border-radius: 0 5px 5px 0;
+}
+.next {
+  right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+/* --- Точки (Индикаторы) --- */
 .dots {
   position: absolute;
-  bottom: 30px;
+  /* Зафиксировали точки в самом низу обертки */
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  z-index: 5;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #ccc;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .activeDot {
   background: #333;
+  transform: scale(1.3);
 }
 
-/* Позиционирование кнопок (добавьте если нет) */
-.prev {
-  left: 20px;
-}
-.next {
-  right: 20px;
-}
-
-/* Адаптив для мобилок */
+/* --- Адаптив для мобильных --- */
 @media (max-width: 768px) {
   .navButton {
-    display: none; /* Скрываем стрелки */
+    display: none !important;
+  }
+
+  .title {
+    font-size: 28px;
   }
 
   .carouselWrapper {
-    height: auto; /* На мобилках высота подстраивается под контент */
+    height: auto;
+    /* На мобильных высота будет подстраиваться, но с запасом под точки */
+    min-height: 550px;
+  }
+
+  .fullScreenSlide {
+    height: auto;
     min-height: 500px;
-  }
-
-  .dots {
-    bottom: 15px; /* Поднимаем точки чуть выше для удобства */
-  }
-
-  .dot {
-    width: 14px; /* Делаем точки чуть крупнее для пальцев */
-    height: 14px;
+    padding: 0 15px 70px 15px; /* Увеличенный нижний отступ на мобильных */
   }
 }

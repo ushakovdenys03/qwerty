@@ -171,10 +171,10 @@ export default function Home() {
       {/* SERVICES */}
       <Services onSelectService={setSelectedService} />
 
-      <PortfolioAll slides={portfolioSlides} />
-
       {/* PRICES */}
       <PricesAll pricesData={pricesData} onOrderClick={openModal} />
+
+      <PortfolioAll slides={portfolioSlides} />
 
       {/* FORM */}
       <Form id="form" selectedService={selectedService} />

@@ -126,59 +126,107 @@
   opacity: 80%;
 }
 
-/* ===== BURGER MODAL ===== */
+/* ===== BURGER MODAL (УЛУЧШЕННЫЙ) ===== */
 .burgerMenu {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
-  width: 30%;
-  min-width: 250px;
+  width: 50%; /* На мобилках лучше на весь экран или 80% */
+  max-width: 320px;
   background: var(--color-dark);
   color: var(--color-white);
-  font-family: "Plus Jakarta Sans";
-  padding: 24px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  padding: 80px 32px 40px; /* Больше отступ сверху под кнопку закрытия */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
+  box-shadow: 20px 0 50px rgba(0, 0, 0, 0.5);
 }
 
 .burgerOpen {
   transform: translateX(0);
 }
 
-/* Исправление выпадающих списков внутри мобильного меню */
-.burgerMenu .dropdown {
-  position: static;
-  background: transparent;
-  box-shadow: none;
-  color: var(--color-white);
-  padding-left: 15px;
+/* Стили для логотипа внутри бургера */
+.burgerMenu img {
+  width: auto;
+  height: 40px;
+  margin-bottom: 40px;
+  align-self: flex-start;
 }
 
-.burgerMenu .dropdownItem {
-  color: var(--color-white);
+/* Элементы меню в бургере */
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
+.burgerMenu .navItem,
+.burgerMenu .element {
+  font-size: 20px; /* Крупнее шрифт */
+  font-weight: 600;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  transition: color 0.3s ease;
+}
+
+.burgerMenu .navItem:hover,
+.burgerMenu .element:hover {
+  color: var(--color-red);
+  transform: none; /* Убираем scale, тут он дешевит вид */
+}
+
+/* Кастомный крестик закрытия */
 .close {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  background: transparent;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
   border: none;
   color: var(--color-white);
-  font-size: 22px;
+  font-size: 24px;
   cursor: pointer;
-  line-height: 1;
-  padding: 4px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: 0.3s;
 }
 
 .close:hover {
-  transform: scale(0.9);
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+/* Плавный Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px); /* Эффект размытия фона как в премиум сайтах */
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Когда бургер открыт, показываем оверлей */
+:has(.burgerOpen) .overlay {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (min-width: 901px) {
