@@ -93,16 +93,16 @@ const portfolioSlides = [
     imageMain: <img src="/internetshop1.png" alt="main" />,
     imageOne: <img src="/internetshop2.png" alt="thumb4" />,
     imageTwo: <img src="/internetshop3.png" alt="thumb5" />,
-    imageThree: <img src="/internetshop1.png" alt="thumb6" />,
+    imageThree: <img src="/internetshop4.png" alt="thumb6" />,
   },
   {
     title: "Mobile Development",
     description:
       "Native and cross-platform mobile apps. Applications for you and your customers. ",
-    imageMain: <img src="/international_comopany1.png" alt="main" />,
-    imageOne: <img src="/international_comopany2.png" alt="thumb1" />,
-    imageTwo: <img src="/international_comopany3.png" alt="thumb2" />,
-    imageThree: <img src="/international_comopany4.png" alt="thumb3" />,
+    imageMain: <img src="/mobile-1.png" alt="main" />,
+    imageOne: <img src="/mobile-2.png" alt="thumb1" />,
+    imageTwo: <img src="/mobile-3.png" alt="thumb2" />,
+    imageThree: <img src="/mobile-4.png" alt="thumb3" />,
   },
   {
     title: "Custom Web Applications",

@@ -1,6 +1,6 @@
 import styles from "./service.module.css";
 
-export default function Service({ id, title, text, link, onClick }) {
+export default function Service({ id, title, text, link, onClick, image }) {
   return (
     <div id={id}>
       <div className={styles.container}>
@@ -21,6 +21,7 @@ export default function Service({ id, title, text, link, onClick }) {
             />
           </div>
         </a>
+        <img className={styles.background} src={image} alt="" />
       </div>
     </div>
   );
