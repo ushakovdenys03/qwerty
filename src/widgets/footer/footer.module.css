@@ -175,7 +175,6 @@
   .socials_container {
     margin-top: 0;
     align-items: center;
-    width: 100%;
   }
 
   .socials_content {
@@ -195,5 +194,17 @@
     flex-direction: column;
     gap: 5px;
     align-items: center;
+  }
+
+  .copyright {
+    padding: 0 0 20px 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .links {
+    padding: 20px 40px;
+    gap: 30px;
+    width: 250px;
   }
 }

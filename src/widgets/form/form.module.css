@@ -227,6 +227,7 @@
 @media (max-width: 850px) {
   .form {
     padding: 18px;
+    width: 90%;
   }
 
   .modalOverlay {
