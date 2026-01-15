@@ -43,13 +43,13 @@ export default function Footer() {
                 Web Development
               </a>
               <a className={styles.list} href="#service_2">
-                AI-Powered Bots
+                AI-Powered Integrations
               </a>
               <a className={styles.list} href="#service_3">
-                Brand Identity & Guidelines
+                Mobile Development
               </a>
               <a className={styles.list} href="#service_4">
-                Social Media Setup & Branding
+                Brand Identity & Guidelines
               </a>
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function Footer() {
                 Business & Corporate Sites
               </a>
               <a className={styles.list} href="#prices_3">
-                Marketing Landing Pages
+                Mobile Development
               </a>
               <a className={styles.list} href="#prices_4">
                 Custom Web Applications
@@ -91,7 +91,7 @@ export default function Footer() {
           <div className={styles.socials_content}>
             <a
               className={styles.links}
-              href="https://t.me/Kavunchick1"
+              href="https://www.tiktok.com/@apexsoft?_r=1&_t=ZN-935uAcVGWco"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -106,7 +106,7 @@ export default function Footer() {
             </a>
             <a
               className={styles.links}
-              href="https://www.instagram.com/_knitel.di_?igsh=MTE4bzlnOHo0M2h6eg=="
+              href="https://www.instagram.com/apex.softof/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -121,7 +121,7 @@ export default function Footer() {
             </a>
             <a
               className={styles.links}
-              href="https://wa.me/+380996504738"
+              href="https://wa.me/+330766950387"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -134,7 +134,7 @@ export default function Footer() {
               />{" "}
               <p className={styles.text}>Whatsapp</p>
             </a>
-            <a
+            {/* <a
               className={styles.links}
               href="https://www.facebook.com/Edvprint_Main"
               target="_blank"
@@ -148,7 +148,7 @@ export default function Footer() {
                 alt="FacebookIcon"
               />{" "}
               <p className={styles.text}>Facebook</p>
-            </a>
+            </a> */}
 
             <div className={styles.posts}>
               <a
