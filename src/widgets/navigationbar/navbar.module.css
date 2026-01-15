@@ -132,10 +132,13 @@
   transform: translateX(-100%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
+  display: none;
 }
 
 .burgerOpen {
   transform: translateX(0);
+  display: flex;
+  transition: 0.3s;
 }
 
 /* Стили для логотипа внутри бургера */
@@ -192,7 +195,7 @@
   width: 30%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px); /* Эффект размытия фона как в премиум сайтах */
+  backdrop-filter: blur(4px);
   z-index: 998;
   opacity: 0;
   transition: opacity 0.4s ease;
