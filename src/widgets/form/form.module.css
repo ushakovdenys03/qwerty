@@ -13,10 +13,20 @@
 /* ===================== */
 
 .wrapper {
-  padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   box-sizing: border-box;
+  width: 100%;
+  background-color: var(--color-dark);
+}
+
+.wrapper::after,
+.wrapper::before {
+  content: "";
+  border: 10px solid var(--input-bg);
+  width: 100%;
 }
 
 /* ===================== */
@@ -28,7 +38,7 @@
   max-width: 720px;
 
   padding: 22px;
-  background: var(--bg);
+  background: transparent;
   color: var(--white);
 
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.45);
