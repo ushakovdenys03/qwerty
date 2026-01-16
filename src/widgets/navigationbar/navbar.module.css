@@ -213,6 +213,10 @@
 }
 
 @media (max-width: 900px) {
+  .button:hover {
+    background: transparent;
+  }
+
   .navigation {
     display: none;
   }

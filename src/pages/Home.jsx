@@ -80,7 +80,7 @@ const portfolioSlides = [
   {
     title: "Online Stores & \nE-Commerce",
     description:
-      "Scalable e-commerce platforms with shopping carts, payments, inventory managemen",
+      "An online shop is a digital store where you can view and buy products using the internet. This method allows you to browse a wide catalog of goods from your home or office without visiting a physical location. Your customers can easily compare prices and read technical details at your own pace, making the selection process calm and organized.",
     imageMain: <img src="/internetshop1.png" alt="main" />,
     imageOne: <img src="/internetshop2.png" alt="thumb4" />,
     imageTwo: <img src="/internetshop4.png" alt="thumb5" />,
@@ -89,7 +89,7 @@ const portfolioSlides = [
   {
     title: "Business & \nCorporate Sites",
     description:
-      "Custom websites, e-commerce stores, landing pages, and web portals built with modern technologies for seamless user experience and high performance.",
+      "A corporate website serves as the primary and most reliable source of information about your company online. It gives you complete control over your public image, allowing you to publish official news, current job openings, and detailed business offers in real time. Unlike simple pages, this platform provides a professional space where your company’s mission and scale are clearly visible to the digital world.",
     imageMain: <img src="/library-business.png" alt="main" />,
     imageOne: <img src="/library-business2.png" alt="thumb1" />,
     imageTwo: <img src="/international_comopany1.png" alt="thumb2" />,
@@ -98,7 +98,7 @@ const portfolioSlides = [
   {
     title: "Mobile Development",
     description:
-      "Native and cross-platform mobile apps. Applications for you and your customers. ",
+      "Mobile applications provide access to the largest group of users in the world today. Since most people carry a smartphone at all times, a mobile app puts your business directly into the hands of your audience. This platform allows you to stay visible and accessible, ensuring that your services are available with just a single tap on a screen. ",
     imageMain: <img src="/mobile-1.png" alt="main" />,
     imageOne: <img src="/mobile-2.png" alt="thumb1" />,
     imageTwo: <img src="/library-mobile2.jpeg" alt="thumb2" />,
@@ -107,7 +107,7 @@ const portfolioSlides = [
   {
     title: "Custom Web Applications",
     description:
-      "Tailored web-based solutions including production tracking systems, inventory management, manufacturing dashboards, CRM/ERP integrations, and automated reporting tools",
+      "Sometimes a standard website or a ready-made shop is not enough to solve specific business tasks. Custom web applications are designed specifically for your unique requirements, offering features that general platforms do not have. This service is ideal if you have a complex project or if you are unsure which traditional solution fits your goals best.",
     imageMain: <img src="/library-custom1.png" alt="main" />,
     imageOne: <img src="/library-custom2.png" alt="thumb1" />,
     imageTwo: <img src="/library-custom3.png" alt="thumb2" />,
