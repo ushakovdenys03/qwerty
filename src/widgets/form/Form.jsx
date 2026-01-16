@@ -4,13 +4,13 @@ import contactFormConfig from "./contactForm.json";
 
 /* ====== ОПИСАНИЯ СЕРВИСОВ ====== */
 const SERVICE_DATA = {
-  "AI-Powered Bots": {
+  "AI-Powered Integrations": {
     description:
-      "Smart automated bots for customer service, marketing, and internal processes across popular platforms.",
+      "Modern technology allows you to integrate artificial intelligence directly into your digital projects. This means you can add smart features, such as automated consultants or virtual assistants, that work for you around the clock. These tools are designed to handle routine tasks, answer common questions instantly, and provide a high level of service without constant human supervision.",
   },
   "Brand Identity & Guidelines": {
     description:
-      "Comprehensive brand books including logo, color palette, typography, and usage rules to ensure consistent and professional branding.",
+      "A strong brand identity is what makes your company recognizable and unique in a crowded market. Our designers help you build a professional visual style, starting with a memorable logo and a complete brandbook. This service ensures that every part of your business - from your website to your documents - looks consistent, polished, and trustworthy.",
   },
   "Mobile Development": {
     description:
@@ -29,7 +29,7 @@ export default function Form({ id, selectedService }) {
     if (selectedService && SERVICE_DATA[selectedService]) {
       return selectedService;
     }
-    return "AI-Powered Bots";
+    return "AI-Powered Integrations";
   });
 
   const [name, setName] = useState("");
@@ -45,7 +45,7 @@ export default function Form({ id, selectedService }) {
   /* ====== ДИНАМИЧЕСКОЕ ОПИСАНИЕ ====== */
   const currentServiceDescription =
     SERVICE_DATA[service]?.description ||
-    SERVICE_DATA["AI-Powered Bots"].description;
+    SERVICE_DATA["AI-Powered Integrations"].description;
 
   /* ====== ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ====== */
   const fillTemplate = (template, data) => {
@@ -119,7 +119,7 @@ export default function Form({ id, selectedService }) {
       setName("");
       setEmail("");
       setMessage("");
-      setService("AI-Powered Bots");
+      setService("AI-Powered Integrations");
       setErrors({});
     } catch (error) {
       console.error(error);

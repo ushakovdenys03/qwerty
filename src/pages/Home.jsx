@@ -93,7 +93,7 @@ const portfolioSlides = [
     imageMain: <img src="/library-business.png" alt="main" />,
     imageOne: <img src="/library-business2.png" alt="thumb1" />,
     imageTwo: <img src="/international_comopany1.png" alt="thumb2" />,
-    imageThree: <img src="/international_comopany4.png" alt="thumb3" />,
+    imageThree: <img src="/library-business3.png" alt="thumb3" />,
   },
   {
     title: "Mobile Development",
@@ -110,7 +110,7 @@ const portfolioSlides = [
       "Tailored web-based solutions including production tracking systems, inventory management, manufacturing dashboards, CRM/ERP integrations, and automated reporting tools",
     imageMain: <img src="/library-custom1.png" alt="main" />,
     imageOne: <img src="/library-custom2.png" alt="thumb1" />,
-    imageTwo: <img src="library-custom3.png" alt="thumb2" />,
+    imageTwo: <img src="/library-custom3.png" alt="thumb2" />,
     imageThree: <img src="/penis.png" alt="thumb3" />,
   },
 ];

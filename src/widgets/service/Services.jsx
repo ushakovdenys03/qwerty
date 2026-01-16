@@ -29,7 +29,7 @@ export default function Services({ onSelectService }) {
           title="AI-Powered Integrations"
           text="Smart automated bots for customer service, marketing, and internal processes across popular platforms"
           link="#form"
-          onClick={() => onSelectService("AI-Powered Bots")}
+          onClick={() => onSelectService("AI-Powered Integrations")}
           image="/ai-service.png"
         />
 
