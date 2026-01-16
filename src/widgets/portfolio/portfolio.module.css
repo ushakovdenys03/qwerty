@@ -37,7 +37,7 @@
 .mainImageWrapper img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   background-color: #f0f0f0;
   transition: 0.3s;
 }

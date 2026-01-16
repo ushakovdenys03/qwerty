@@ -90,9 +90,9 @@ const portfolioSlides = [
     title: "Business & \nCorporate Sites",
     description:
       "Custom websites, e-commerce stores, landing pages, and web portals built with modern technologies for seamless user experience and high performance.",
-    imageMain: <img src="/international_comopany1.png" alt="main" />,
-    imageOne: <img src="/international_comopany2.png" alt="thumb1" />,
-    imageTwo: <img src="/international_comopany3.png" alt="thumb2" />,
+    imageMain: <img src="/library-business.png" alt="main" />,
+    imageOne: <img src="/library-business2.png" alt="thumb1" />,
+    imageTwo: <img src="/international_comopany1.png" alt="thumb2" />,
     imageThree: <img src="/international_comopany4.png" alt="thumb3" />,
   },
   {
@@ -101,17 +101,17 @@ const portfolioSlides = [
       "Native and cross-platform mobile apps. Applications for you and your customers. ",
     imageMain: <img src="/mobile-1.png" alt="main" />,
     imageOne: <img src="/mobile-2.png" alt="thumb1" />,
-    imageTwo: <img src="/mobile-4.png" alt="thumb2" />,
+    imageTwo: <img src="/library-mobile2.jpeg" alt="thumb2" />,
     imageThree: <img src="/mobile-3.png" alt="thumb3" />,
   },
   {
     title: "Custom Web Applications",
     description:
       "Tailored web-based solutions including production tracking systems, inventory management, manufacturing dashboards, CRM/ERP integrations, and automated reporting tools",
-    imageMain: <img src="/international_comopany1.png" alt="main" />,
-    imageOne: <img src="/international_comopany2.png" alt="thumb1" />,
-    imageTwo: <img src="/international_comopany3.png" alt="thumb2" />,
-    imageThree: <img src="/international_comopany4.png" alt="thumb3" />,
+    imageMain: <img src="/library-custom1.png" alt="main" />,
+    imageOne: <img src="/library-custom2.png" alt="thumb1" />,
+    imageTwo: <img src="library-custom3.png" alt="thumb2" />,
+    imageThree: <img src="/penis.png" alt="thumb3" />,
   },
 ];
 
