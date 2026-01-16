@@ -4,7 +4,7 @@
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   padding: 20px;
   z-index: 1000;
   overflow-y: auto;
