@@ -17,7 +17,7 @@ const pricesData = [
   {
     id: "prices_1",
     title: "Online Stores & \nE-Commerce",
-    text: "Scalable e-commerce platforms with shopping carts, payments, inventory managemen",
+    text: "Scalable e-commerce platforms with shopping carts, payments, inventory management",
     information: [
       "Secure online payments",
       "Advanced product filtering",

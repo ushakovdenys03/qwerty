@@ -14,7 +14,7 @@ const SERVICE_DATA = {
   },
   "Mobile Development": {
     description:
-      "Mobile apps for you and your clients. Developed for iOS and Android. Your company on your phone!",
+      "Mobile applications provide access to the largest group of users in the world today. Since most people carry a smartphone at all times, a mobile app puts your business directly into the hands of your audience. This platform allows you to stay visible and accessible, ensuring that your services are available with just a single tap on a screen. The installation of an app naturally motivates a person to use your service again and again. Unlike mobile websites, these applications are much faster and use native functions of the phone to provide a smooth experience. By having a permanent icon on their screen, your clients can quickly return to your business, which builds strong loyalty and a regular habit of interaction.",
   },
   "Your Unique Case": {
     description:
