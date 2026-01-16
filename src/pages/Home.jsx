@@ -83,8 +83,8 @@ const portfolioSlides = [
       "Scalable e-commerce platforms with shopping carts, payments, inventory managemen",
     imageMain: <img src="/internetshop1.png" alt="main" />,
     imageOne: <img src="/internetshop2.png" alt="thumb4" />,
-    imageTwo: <img src="/internetshop3.png" alt="thumb5" />,
-    imageThree: <img src="/internetshop4.png" alt="thumb6" />,
+    imageTwo: <img src="/internetshop4.png" alt="thumb5" />,
+    imageThree: <img src="/internetshop3.png" alt="thumb6" />,
   },
   {
     title: "Business & \nCorporate Sites",
@@ -101,8 +101,8 @@ const portfolioSlides = [
       "Native and cross-platform mobile apps. Applications for you and your customers. ",
     imageMain: <img src="/mobile-1.png" alt="main" />,
     imageOne: <img src="/mobile-2.png" alt="thumb1" />,
-    imageTwo: <img src="/mobile-3.png" alt="thumb2" />,
-    imageThree: <img src="/mobile-4.png" alt="thumb3" />,
+    imageTwo: <img src="/mobile-4.png" alt="thumb2" />,
+    imageThree: <img src="/mobile-3.png" alt="thumb3" />,
   },
   {
     title: "Custom Web Applications",
