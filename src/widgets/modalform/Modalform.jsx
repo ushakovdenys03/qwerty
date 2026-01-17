@@ -50,12 +50,12 @@ export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
               name,
             },
           }),
-        }
+        },
       );
 
       if (!response.ok) throw new Error("EmailJS send failed");
     },
-    []
+    [],
   );
 
   const validate = useCallback(() => {
@@ -93,7 +93,7 @@ export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
       const finalTitle = fillTemplate(modalFormConfig.title, templateData);
       const finalMainText = fillTemplate(
         modalFormConfig.main_text,
-        templateData
+        templateData,
       );
 
       await sendEmail({
@@ -142,7 +142,7 @@ export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
                 value={selected.title}
                 onChange={(e) => {
                   const found = prices.find(
-                    (item) => item.title === e.target.value
+                    (item) => item.title === e.target.value,
                   );
                   setSelected(found);
                 }}
@@ -162,7 +162,7 @@ export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
               <p>{selected.text}</p>
               <ul>
                 {selected.information.map((item, idx) => (
-                  <li key={idx}>{item}</li>
+                  <li key={idx}> • {item}</li>
                 ))}
               </ul>
               <p>

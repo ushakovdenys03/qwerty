@@ -55,7 +55,7 @@ export default function Footer() {
           </div>
 
           <div className={styles.information_container}>
-            <h2 className={styles.title}>Web_sites</h2>
+            <h2 className={styles.title}>Web Development</h2>
             <div className={styles.information_content}>
               <a className={styles.list} href="#prices_1">
                 Online Stores & E-Commerce
