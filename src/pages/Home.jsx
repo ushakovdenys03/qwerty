@@ -10,9 +10,7 @@ import ModalForm from "../widgets/modalform/Modalform";
 import Hero from "../widgets/hero/Hero";
 import PortfolioAll from "../widgets/portfolio/PortfolioAll";
 
-/* ===============================
-   SINGLE SOURCE OF TRUTH
-================================ */
+// PRICES
 const pricesData = [
   {
     id: "prices_1",
@@ -98,7 +96,7 @@ const portfolioSlides = [
   {
     title: "Mobile Development",
     description:
-      "Mobile applications provide access to the largest group of users in the world today. Since most people carry a smartphone at all times, a mobile app puts your business directly into the hands of your audience. This platform allows you to stay visible and accessible, ensuring that your services are available with just a single tap on a screen. ",
+      "Mobile apps open the door to the world’s largest user audience today. Because smartphones are always within reach, a mobile application places your business right in front of your customers. This channel helps you remain noticeable and easy to reach, allowing users to access your services instantly with a simple tap.",
     imageMain: <img src="/mobile-1.png" alt="main" />,
     imageOne: <img src="/mobile-2.png" alt="thumb1" />,
     imageTwo: <img src="/library-mobile2.jpeg" alt="thumb2" />,
@@ -111,21 +109,16 @@ const portfolioSlides = [
     imageMain: <img src="/library-custom1.png" alt="main" />,
     imageOne: <img src="/library-custom2.png" alt="thumb1" />,
     imageTwo: <img src="/library-custom3.png" alt="thumb2" />,
-    imageThree: <img src="/penis.png" alt="thumb3" />,
+    imageThree: <img src="/library-custom4.jpeg" alt="thumb3" />,
   },
 ];
 
 export default function Home() {
-  /* ===============================
-     STATE
-  ================================ */
   const [selectedService, setSelectedService] = useState("Landing");
   const [modalOpen, setModalOpen] = useState(false);
   const [currentPrice, setCurrentPrice] = useState(pricesData[0]);
 
-  /* ===============================
-     SCROLL TO HASH (#prices_1)
-  ================================ */
+  // SCROLL (prices_1)
   const location = useLocation();
 
   useEffect(() => {
@@ -135,7 +128,6 @@ export default function Home() {
     const element = document.getElementById(id);
 
     if (element) {
-      // небольшой timeout — чтобы DOM точно успел отрендериться
       setTimeout(() => {
         element.scrollIntoView({
           behavior: "smooth",
@@ -145,9 +137,6 @@ export default function Home() {
     }
   }, [location]);
 
-  /* ===============================
-     HANDLERS
-  ================================ */
   const openModal = (price) => {
     setCurrentPrice(price);
     setModalOpen(true);
@@ -157,32 +146,22 @@ export default function Home() {
     setModalOpen(false);
   };
 
-  /* ===============================
-     RENDER
-  ================================ */
   return (
     <>
-      {/* NAVIGATION */}
       <Navbar onOrderClick={() => openModal(pricesData[0])} />
 
-      {/* HERO */}
       <Hero />
 
-      {/* SERVICES */}
       <Services onSelectService={setSelectedService} />
 
-      {/* PRICES */}
       <PricesAll pricesData={pricesData} onOrderClick={openModal} />
 
       <PortfolioAll slides={portfolioSlides} />
 
-      {/* FORM */}
       <Form id="form" selectedService={selectedService} />
 
-      {/* FOOTER */}
       <Footer />
 
-      {/* MODAL FORM */}
       <ModalForm
         isOpen={modalOpen}
         onClose={closeModal}

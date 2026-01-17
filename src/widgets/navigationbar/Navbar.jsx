@@ -11,18 +11,15 @@ export default function Navbar({ onOrderClick }) {
     setOpenIndex((prev) => (prev === i ? null : i));
   };
 
-  // Единая функция для закрытия меню
   const handleMenuClose = () => {
     setBurgerOpen(false);
     setOpenIndex(null);
   };
 
-  // Улучшенная версия с надёжным закрытием + скроллом
   const scrollToSectionAndClose = (e, id) => {
     e.preventDefault();
     handleMenuClose();
 
-    // Даём небольшую задержку, чтобы анимация закрытия меню успела начаться
     setTimeout(() => {
       const element = document.getElementById(id);
       if (element) {
@@ -64,7 +61,6 @@ export default function Navbar({ onOrderClick }) {
 
   return (
     <>
-      {/* Затемнение фона */}
       {burgerOpen && (
         <div className={styles.overlay} onClick={handleMenuClose} />
       )}
@@ -82,7 +78,6 @@ export default function Navbar({ onOrderClick }) {
 
         <div className={styles.content}>
           <div className={styles.navigation} ref={navRef}>
-            {/* Desktop Services */}
             <div className={styles.elementWrapper}>
               <button
                 className={styles.element}
@@ -132,7 +127,6 @@ export default function Navbar({ onOrderClick }) {
               )}
             </div>
 
-            {/* Desktop Orders */}
             <div className={styles.elementWrapper}>
               <button
                 className={styles.element}

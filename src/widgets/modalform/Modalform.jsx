@@ -3,7 +3,6 @@ import styles from "./modalform.module.css";
 import modalFormConfig from "./modalForm.json";
 
 export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
-  /* ===== STATE ===== */
   const [selected, setSelected] = useState(defaultPrice);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,7 +14,6 @@ export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
 
   const closeBtnRef = useRef(null);
 
-  /* ===== RESET ON OPEN ===== */
   useEffect(() => {
     if (isOpen) {
       setSelected(defaultPrice);
@@ -27,7 +25,6 @@ export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
     }
   }, [isOpen, defaultPrice]);
 
-  /* ===== HELPERS ===== */
   const fillTemplate = (template, data) => {
     return template.replace(/{{(\w+)}}/g, (match, key) => {
       return data[key] || match;
@@ -61,7 +58,6 @@ export default function ModalForm({ isOpen, onClose, prices, defaultPrice }) {
     []
   );
 
-  /* ===== VALIDATION ===== */
   const validate = useCallback(() => {
     const e = {};
     if (!name.trim()) e.name = "Please enter your name.";

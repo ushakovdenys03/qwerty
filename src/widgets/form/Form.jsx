@@ -23,8 +23,6 @@ const SERVICE_DATA = {
 };
 
 export default function Form({ id, selectedService }) {
-  /* ====== STATE ====== */
-  // Используем функцию для инициализации, чтобы гарантировать наличие значения
   const [service, setService] = useState(() => {
     if (selectedService && SERVICE_DATA[selectedService]) {
       return selectedService;
@@ -42,19 +40,17 @@ export default function Form({ id, selectedService }) {
 
   const closeBtnRef = useRef(null);
 
-  /* ====== ДИНАМИЧЕСКОЕ ОПИСАНИЕ ====== */
   const currentServiceDescription =
     SERVICE_DATA[service]?.description ||
     SERVICE_DATA["AI-Powered Integrations"].description;
 
-  /* ====== ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ====== */
   const fillTemplate = (template, data) => {
     return template.replace(/{{(\w+)}}/g, (match, key) => {
       return data[key] || match;
     });
   };
 
-  /* ====== EMAIL SENDER ====== */
+  /* ====== EMAIL ====== */
   const sendEmail = useCallback(
     async ({ creation_date, title, main_text, name }) => {
       const response = await fetch(
@@ -144,7 +140,6 @@ export default function Form({ id, selectedService }) {
     }
   }, [sent]);
 
-  // Синхронизация
   useEffect(() => {
     if (selectedService && SERVICE_DATA[selectedService]) {
       setService(selectedService);

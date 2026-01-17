@@ -9,12 +9,11 @@ export default function Portfolio({
   imageThree,
   description,
   title,
-  slideIndex, // Принимаем индекс из PortfolioAll
+  slideIndex,
 }) {
   const [toggler, setToggler] = useState(false);
   const [productIndex, setProductIndex] = useState(0);
 
-  // Собираем актуальные src
   const images = [
     imageMain.props.src,
     imageOne.props.src,
@@ -53,13 +52,11 @@ export default function Portfolio({
         </div>
       </div>
 
-      {/* ✅ ТЕКСТ ПОСЛЕ КАРТИНОК */}
       <div className={styles.mobileText}>
         <h2>{title}</h2>
         <p>{description}</p>
       </div>
 
-      {/* Ключ key заставляет лайтбокс полностью пересоздаться при смене слайда */}
       <FsLightbox
         key={`${slideIndex}_${images.join("")}`}
         toggler={toggler}
