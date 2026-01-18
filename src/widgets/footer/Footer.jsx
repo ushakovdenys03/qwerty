@@ -86,7 +86,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.socials_container}>
-          <h2 className={styles.title}>Social_Media</h2>
+          <h2 className={styles.title}>Social Media</h2>
 
           <div className={styles.socials_content}>
             <a
